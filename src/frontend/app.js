@@ -3,7 +3,7 @@
 // ============================================================================
 
 const CONFIG = {
-  API_URL: "", // URL задеплоенного Apps Script Web App (заполняется при деплое)
+  API_URL: "https://script.google.com/macros/s/AKfycbzII4ILbwjqtac4CLaV_4ZAOFph5SeDfmFnFl3soReUlG6bojP7kCJXhJbOQZo_qXyRyA/exec", // URL задеплоенного Apps Script Web App (заполняется при деплое)
   POLL_INTERVAL: 3000, // миллисекунды между запросами новых сообщений
   MAX_MESSAGE_LENGTH: 1000
 };
