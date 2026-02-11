@@ -32,11 +32,11 @@ async function apiCall(action, data = {}) {
   try {
     const response = await fetch(CONFIG.API_URL, {
       method: "POST",
-      headers: { "Content-Type": "text/plain" },
-      redirect: "follow",
       body: JSON.stringify({ action, ...data })
     });
-    const result = await response.json();
+    const text = await response.text();
+    console.log("API raw response:", text);
+    const result = JSON.parse(text);
 
     // Если токен истёк — автоматически разлогиниваем
     if (!result.ok && result.error === "unauthorized") {
