@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GSheets Chat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Экран авторизации -->
+  <div id="auth-screen">
+    <div class="auth-container">
+      <h1>GSheets Chat</h1>
+      <input id="auth-nickname" placeholder="Ник" maxlength="20">
+      <input id="auth-password" type="password" placeholder="Пароль">
+      <div class="auth-buttons">
+        <button id="btn-login">Войти</button>
+        <button id="btn-register">Регистрация</button>
+      </div>
+      <div id="auth-error"></div>
+    </div>
+  </div>
+
+  <!-- Экран чата -->
+  <div id="chat-screen" hidden>
+    <!-- BUG 5: Кнопка мобильного меню -->
+    <button id="menu-toggle" class="menu-toggle">☰</button>
+    <div class="chat-layout">
+      <!-- Сайдбар -->
+      <aside id="sidebar">
+        <div class="sidebar-header">
+          <span id="current-user"></span>
+          <button id="btn-logout">Выйти</button>
+        </div>
+        <div class="sidebar-section">
+          <h3>Чаты</h3>
+          <div id="chat-list"></div>
+          <button id="btn-new-chat">+ чат</button>
+        </div>
+        <div class="sidebar-section">
+          <h3>Личные</h3>
+          <div id="dm-list"></div>
+          <button id="btn-new-dm">+ ЛС</button>
+        </div>
+      </aside>
+
+      <!-- Основная область -->
+      <main id="main-area">
+        <div id="chat-header"></div>
+        <div id="messages"></div>
+        <div id="message-input-area">
+          <input id="message-input" placeholder="Сообщение..." maxlength="1000">
+          <button id="btn-send">→</button>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
